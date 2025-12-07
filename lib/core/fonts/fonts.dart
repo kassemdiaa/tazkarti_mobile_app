@@ -8,9 +8,9 @@ abstract class FontManeger {
     fontWeight: FontWeight.w600,
   );
   static const TextStyle eventdetails = TextStyle(
-    color: ColorsManeger.black,
-    fontSize: 16,
-    fontWeight: FontWeight.w300,
+    color: ColorsManeger.white,
+    fontSize: 20,
+    fontWeight: FontWeight.w400,
   );
   static const TextStyle eventBuy = TextStyle(
     color: ColorsManeger.green,
