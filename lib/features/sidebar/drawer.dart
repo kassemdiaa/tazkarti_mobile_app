@@ -43,7 +43,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 onTap: () {
                   Navigator.pushNamed(context, RoutesManeger.mainlayout);
                 },
-                child: Text('HOME', style: FontManeger.eventdetails),
+                child: Text('HOME', style: FontManeger.drawerTitles),
               ),
               SizedBox(height: 10),
               Container(color: ColorsManeger.white, width: 270, height: 1),
@@ -57,7 +57,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 },
                 child: Text(
                   'STADIUM LOCATIONS',
-                  style: FontManeger.eventdetails,
+                  style: FontManeger.drawerTitles,
                 ),
               ),
               SizedBox(height: 10),
@@ -67,7 +67,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 onTap: () {
                   Navigator.pushNamed(context, RoutesManeger.ourStoresScreen);
                 },
-                child: Text('OUR STORES', style: FontManeger.eventdetails),
+                child: Text('OUR STORES', style: FontManeger.drawerTitles),
               ),
               SizedBox(height: 10),
               Container(color: ColorsManeger.white, width: 270, height: 1),
@@ -76,7 +76,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 onTap: () {
                   Navigator.pushNamed(context, RoutesManeger.faqScreen);
                 },
-                child: Text('FAQ', style: FontManeger.eventdetails),
+                child: Text('FAQ', style: FontManeger.drawerTitles),
               ),
               SizedBox(height: 10),
               Container(color: ColorsManeger.white, width: 270, height: 1),
@@ -85,7 +85,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 onTap: () {
                   Navigator.pushNamed(context, RoutesManeger.aboutScreen);
                 },
-                child: Text('ABOUT TAZKARTI', style: FontManeger.eventdetails),
+                child: Text('ABOUT TAZKARTI', style: FontManeger.drawerTitles),
               ),
               SizedBox(height: 10),
               Container(color: ColorsManeger.white, width: 270, height: 1),
@@ -94,7 +94,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 onTap: () {
                   Navigator.pushNamed(context, RoutesManeger.contactUsScreen);
                 },
-                child: Text('CONTACT US', style: FontManeger.eventdetails),
+                child: Text('CONTACT US', style: FontManeger.drawerTitles),
               ),
             ],
           ),

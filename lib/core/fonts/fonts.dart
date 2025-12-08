@@ -2,49 +2,50 @@ import 'package:flutter/material.dart';
 import 'package:tazkarti/core/colors/colors.dart';
 
 abstract class FontManeger {
-  static const TextStyle eventName = TextStyle(
-    color: ColorsManeger.black,
-    fontSize: 17,
-    fontWeight: FontWeight.w600,
+  static const TextStyle smallTitle = TextStyle(
+    color: ColorsManeger.gray,
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
   );
-  static const TextStyle eventdetails = TextStyle(
+  static const TextStyle drawerTitles = TextStyle(
     color: ColorsManeger.white,
     fontSize: 20,
     fontWeight: FontWeight.w400,
   );
-  static const TextStyle eventBuy = TextStyle(
+  static const TextStyle register = TextStyle(
     color: ColorsManeger.green,
-    fontSize: 20,
-    fontWeight: FontWeight.w700,
+    fontSize: 22,
+    fontWeight: FontWeight.w400,
   );
   static const TextStyle bigTitle = TextStyle(
     color: ColorsManeger.black,
+    fontSize: 24,
+    fontWeight: FontWeight.w800,
+  );
+  static const TextStyle tazkartiIdPass = TextStyle(
+    color: Color.fromARGB(255, 116, 115, 115),
     fontSize: 20,
-    fontWeight: FontWeight.w900,
+    fontWeight: FontWeight.w600,
   );
-  static const TextStyle bottomLinks = TextStyle(
-    color: ColorsManeger.white,
+  static const TextStyle forget = TextStyle(
+    color: ColorsManeger.blue,
     fontSize: 13,
-    fontWeight: FontWeight.w400,
-  );
-  static const TextStyle eventTitle = TextStyle(
-    color: ColorsManeger.gray,
-    fontSize: 18,
-    fontWeight: FontWeight.w200,
-  );
-  static const TextStyle searchBottom = TextStyle(
-    color: ColorsManeger.white,
-    fontSize: 12,
-    fontWeight: FontWeight.bold,
-  );
-  static const TextStyle tazkartiName = TextStyle(
-    color: ColorsManeger.black,
-    fontSize: 15,
     fontWeight: FontWeight.w500,
   );
-  static const TextStyle tazkartiId = TextStyle(
+  static const TextStyle notHaveAcc = TextStyle(
     color: ColorsManeger.black,
-    fontSize: 12,
-    fontWeight: FontWeight.w200,
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+  );
+  static const TextStyle botton = TextStyle(
+    color: ColorsManeger.white,
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+  );
+  static const TextStyle hintStyle = TextStyle(
+    color: ColorsManeger.gray,
+    fontSize: 20,
+    fontWeight: FontWeight.w400,
+    
   );
 }
