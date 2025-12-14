@@ -25,4 +25,5 @@ abstract class AssetsManeger {
   static const String dmnhourCover ='assets/dmnhourcover.jpeg';
   static const String dmnhour1 ='assets/dmnhour1.jpeg';
   static const String dmnhour2 ='assets/dmnhour2.jpeg';
+  static const String avatar ='assets/id-personal.png';
 }

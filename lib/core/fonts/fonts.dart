@@ -48,4 +48,10 @@ abstract class FontManeger {
     fontWeight: FontWeight.w400,
     
   );
+  static const TextStyle name = TextStyle(
+    color: ColorsManeger.black,
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+    
+  );
 }
