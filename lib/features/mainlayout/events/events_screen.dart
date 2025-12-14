@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:tazkarti/core/assets/assets.dart';
+import 'package:tazkarti/core/widgets/event_category/event_category.dart';
 import 'package:tazkarti/core/widgets/event_item/event_item.dart';
 
 class EventsScreen extends StatefulWidget {

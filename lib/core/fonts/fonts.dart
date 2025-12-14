@@ -73,4 +73,10 @@ static const TextStyle eventBuy = TextStyle(
     fontWeight: FontWeight.w500,
     
   );
+  static const TextStyle categoryTitle = TextStyle(
+    color: ColorsManeger.gray,
+    fontSize: 25,
+    fontWeight: FontWeight.w300,
+    
+  );
 }
