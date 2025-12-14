@@ -54,4 +54,23 @@ abstract class FontManeger {
     fontWeight: FontWeight.w600,
     
   );
+  static const TextStyle eventDetails = TextStyle(
+    color: ColorsManeger.black,
+    fontSize: 20,
+    fontWeight: FontWeight.w300,
+    
+  );
+  static const TextStyle eventlocation = TextStyle(
+    color: ColorsManeger.blue,
+    fontSize: 20,
+    fontWeight: FontWeight.w400,
+    decoration: TextDecoration.underline,
+    decorationColor: ColorsManeger.blue,
+  );
+static const TextStyle eventBuy = TextStyle(
+    color: ColorsManeger.green,
+    fontSize: 23,
+    fontWeight: FontWeight.w500,
+    
+  );
 }
