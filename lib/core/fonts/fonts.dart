@@ -79,4 +79,23 @@ static const TextStyle eventBuy = TextStyle(
     fontWeight: FontWeight.w300,
     
   );
+  static const TextStyle faqTitle = TextStyle(
+    color: ColorsManeger.black,
+    fontSize: 28,
+    fontWeight: FontWeight.w300,
+    
+  );
+  static const TextStyle aboutTitle = TextStyle(
+    color: ColorsManeger.black,
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
+    
+  );
+  
+  static const TextStyle aboutFooter = TextStyle(
+    color: ColorsManeger.black,
+    fontSize: 19,
+    fontWeight: FontWeight.w500,
+    
+  );
 }
