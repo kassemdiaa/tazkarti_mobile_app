@@ -4,6 +4,7 @@ import 'package:marquee/marquee.dart';
 import 'package:tazkarti/core/colors/colors.dart';
 import 'package:tazkarti/core/fonts/fonts.dart';
 import 'package:tazkarti/core/widgets/clickedImage/clickedImage.dart';
+import 'package:tazkarti/core/widgets/search_button/search_button.dart';
 
 class MatchesScreen extends StatefulWidget {
   const MatchesScreen({super.key});
@@ -48,27 +49,7 @@ class _MatchesScreenState extends State<MatchesScreen> {
                   ),
                 ),
                 Spacer(),
-                Container(
-                  width: 91.71.w,
-                  height: 35.h,
-                  color: ColorsManeger.blue,
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Row(
-                      children: [
-                        Icon(Icons.filter_list_alt, color: ColorsManeger.white),
-                        SizedBox(width: 5.w),
-                        Text(
-                          "Search",
-                          style: FontManeger.forget.copyWith(
-                            fontWeight: FontWeight.w700,
-                            color: ColorsManeger.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                SearchButton()
               ],
             ),
           ),

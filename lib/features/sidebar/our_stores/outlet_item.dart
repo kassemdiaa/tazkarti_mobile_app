@@ -109,10 +109,7 @@ class _OutletItemState extends State<OutletItem> {
                           child: Container(
                             padding: EdgeInsets.all(16),
                             decoration: BoxDecoration(
-                              border: Border.all(
-                                color: ColorsManeger.gray,
-                                width: 1,
-                              ),
+                              border: Border(right: BorderSide(width: 1,color: ColorsManeger.gray))
                             ),
                             child: Text('District',style: TextStyle(
                               color: ColorsManeger.black,
@@ -125,10 +122,7 @@ class _OutletItemState extends State<OutletItem> {
                           child: Container(
                             padding: EdgeInsets.all(16),
                             decoration: BoxDecoration(
-                              border: Border.all(
-                                color: ColorsManeger.gray,
-                                width: 1,
-                              ),
+                              
                             ),
                             child: Text(widget.distrect),
                           ),
@@ -141,10 +135,7 @@ class _OutletItemState extends State<OutletItem> {
                           child: Container(
                             padding: EdgeInsets.all(16),
                             decoration: BoxDecoration(
-                              border: Border.all(
-                                color: ColorsManeger.gray,
-                                width: 1,
-                              ),
+                              border: Border(right: BorderSide(color: ColorsManeger.gray,width: 1))
                             ),
                             child: Text('Address',style: TextStyle(
                               color: ColorsManeger.black,
@@ -155,12 +146,9 @@ class _OutletItemState extends State<OutletItem> {
                         ),
                         Expanded(
                           child: Container(
-                            padding: EdgeInsets.all(6),
+                            padding: EdgeInsets.all(16),
                             decoration: BoxDecoration(
-                              border: Border.all(
-                                color: ColorsManeger.gray,
-                                width: 1,
-                              ),
+                              
                             ),
                             child: Text(widget.address),
                           ),

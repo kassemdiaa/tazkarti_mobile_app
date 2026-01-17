@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 import 'package:tazkarti/core/colors/colors.dart';
 import 'package:tazkarti/core/icons/Icons_maneger.dart';
 import 'package:tazkarti/core/widgets/header_info/header_info.dart';
@@ -11,6 +12,7 @@ import 'package:tazkarti/features/mainlayout/home/home_screen.dart';
 import 'package:tazkarti/features/mainlayout/matches/matches_screen.dart';
 import 'package:tazkarti/features/mainlayout/my_tickets/my_tickets_screen.dart';
 import 'package:tazkarti/features/sidebar/drawer.dart';
+import 'package:tazkarti/providers/bottom_nav_provider/bottom_nav_provider.dart';
 
 class MainLayout extends StatefulWidget {
   const MainLayout({super.key});
@@ -21,7 +23,7 @@ class MainLayout extends StatefulWidget {
 
 class _MainLayoutState extends State<MainLayout> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  int tapindex = 0;
+
   List<Widget> taps = [
     const HomeScreen(),
     const MatchesScreen(),
@@ -31,6 +33,37 @@ class _MainLayoutState extends State<MainLayout> {
   ];
   @override
   Widget build(BuildContext context) {
+    final bottomNav = context.watch<BottomNavProvider>();
+    BottomNavigationBarItem _buildItem(
+      int index,
+      String icon,
+      String label,
+      int currentIndex,
+    ) {
+      final isSelected = index == currentIndex;
+
+      return BottomNavigationBarItem(
+        icon: Column(
+          children: [
+            SvgPicture.asset(
+              icon,
+              width: 30,
+              color: isSelected ? ColorsManeger.black : ColorsManeger.gray,
+            ),
+            SizedBox(height: 4.h),
+            Text(
+              label,
+              style: TextStyle(
+                color: isSelected ? ColorsManeger.black : ColorsManeger.gray,
+                fontSize: 12.sp,
+              ),
+            ),
+          ],
+        ),
+        label: label,
+      );
+    }
+
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -60,147 +93,29 @@ class _MainLayoutState extends State<MainLayout> {
       body: Column(
         children: [
           const HeaderInfo(),
-          Expanded(child: taps[tapindex]),
+          Expanded(child: taps[bottomNav.currentIndex]),
         ],
       ),
       drawer: CustomDrawer(),
 
       bottomNavigationBar: BottomNavigationBar(
-        onTap: (selectedIndex) {
-          tapindex = selectedIndex;
-          setState(() {});
-        },
-        currentIndex: tapindex,
+        onTap: bottomNav.changeIndex,
+        currentIndex: bottomNav.currentIndex,
         items: [
-          BottomNavigationBarItem(
-            icon: tapindex == 0
-                ? Column(
-                  children: [
-                    SvgPicture.asset(
-                        SvgManeger.home,
-                        width: 30,
-                        color: ColorsManeger.black,
-                      ),
-                      SizedBox(height: 4.h,),
-                      Text('Home',style: TextStyle(color: ColorsManeger.black,fontSize: 12.sp),)
-                  ],
-                )
-                : Column(
-                  children: [
-                    SvgPicture.asset(
-                        SvgManeger.home,
-                        width: 30,
-                        color: ColorsManeger.gray,
-                      ),
-                      SizedBox(height: 4.h,),
-                      Text('Home',style: TextStyle(color: ColorsManeger.gray,fontSize: 12.sp),)
-                  ],
-                ),
-            label: 'Home',
+          _buildItem(0, SvgManeger.home, 'Home', bottomNav.currentIndex),
+          _buildItem(1, SvgManeger.matches, 'Matches', bottomNav.currentIndex),
+          _buildItem(2, SvgManeger.event, 'Events', bottomNav.currentIndex),
+          _buildItem(
+            3,
+            SvgManeger.mytickets,
+            'My Tickets',
+            bottomNav.currentIndex,
           ),
-          BottomNavigationBarItem(
-            icon: tapindex == 1
-                ? Column(
-                  children: [
-                    SvgPicture.asset(
-                        SvgManeger.matches,
-                        width: 30,
-                        color: ColorsManeger.black,
-                      ),
-                      SizedBox(height: 4.h,),
-                      Text('Matches',style: TextStyle(color: ColorsManeger.black,fontSize: 12.sp),)
-                  ],
-                )
-                : Column(
-                  children: [
-                    SvgPicture.asset(
-                        SvgManeger.matches,
-                        width: 30,
-                        color: ColorsManeger.gray,
-                      ),
-                      SizedBox(height: 4.h,),
-                      Text('Matches',style: TextStyle(color: ColorsManeger.gray,fontSize: 12.sp),)
-                  ],
-                ),
-            label: 'Matches',
-          ),
-          BottomNavigationBarItem(
-            icon: tapindex == 2
-                ? Column(
-                  children: [
-                    SvgPicture.asset(
-                        SvgManeger.event,
-                        width: 30,
-                        color: ColorsManeger.black,
-                      ),
-                      SizedBox(height: 4.h,),
-                      Text('Events',style: TextStyle(color: ColorsManeger.black,fontSize: 12.sp),)
-                  ],
-                )
-                : Column(
-                  children: [
-                    SvgPicture.asset(
-                        SvgManeger.event,
-                        width: 30,
-                        color: ColorsManeger.gray,
-                      ),
-                      SizedBox(height: 4.h,),
-                      Text('Events',style: TextStyle(color: ColorsManeger.gray,fontSize: 12.sp),)
-                  ],
-                ),
-            label: 'Events',
-          ),
-          BottomNavigationBarItem(
-            icon: tapindex == 3
-                ? Column(
-                  children: [
-                    SvgPicture.asset(
-                        SvgManeger.mytickets,
-                        width: 30,
-                        color: ColorsManeger.black,
-                      ),
-                      SizedBox(height: 4.h,),
-                      Text('My Tickets',style: TextStyle(color: ColorsManeger.black,fontSize: 12.sp),)
-                  ],
-                )
-                : Column(
-                  children: [
-                    SvgPicture.asset(
-                        SvgManeger.mytickets,
-                        width: 30,
-                        color: ColorsManeger.gray,
-                      ),
-                      SizedBox(height: 4.h,),
-                      Text('My Tickets',style: TextStyle(color: ColorsManeger.gray,fontSize: 12.sp),)
-                  ],
-                ),
-            label: 'My Tickets',
-          ),
-          BottomNavigationBarItem(
-            icon: tapindex == 4
-                ? Column(
-                  children: [
-                    SvgPicture.asset(
-                        SvgManeger.dependents,
-                        width: 30,
-                        color: ColorsManeger.black,
-                      ),
-                      SizedBox(height: 4.h,),
-                      Text('Dependents',style: TextStyle(color: ColorsManeger.black,fontSize: 12.sp),)
-                  ],
-                )
-                : Column(
-                  children: [
-                    SvgPicture.asset(
-                        SvgManeger.dependents,
-                        width: 30,
-                        color: ColorsManeger.gray,
-                      ),
-                      SizedBox(height: 4.h,),
-                      Text('Dependents',style: TextStyle(color: ColorsManeger.gray,fontSize: 12.sp),)
-                  ],
-                ),
-            label: 'Dependents',
+          _buildItem(
+            4,
+            SvgManeger.dependents,
+            'Dependents',
+            bottomNav.currentIndex,
           ),
         ],
       ),

@@ -169,6 +169,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                             ),
                           ),
                           //outlets here
+                          OutletItem(outletName: 'Orange', city: 'Cairo', dedicatedTo: 'Entertament', distrect: ' Fifth Settlement ', address: ' Down town mall ')
                         ],
                       ),
                     ),
@@ -295,6 +296,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                             ),
                           ),
                           //outlets here
+                          OutletItem(outletName: 'Orange', city: 'Cairo', dedicatedTo: 'Sports', distrect: ' Fifth Settlement ', address: ' Down town mall ')
                         ],
                       ),
                     ),

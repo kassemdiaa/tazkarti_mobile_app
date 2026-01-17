@@ -67,6 +67,12 @@ abstract class FontManeger {
     decoration: TextDecoration.underline,
     decorationColor: ColorsManeger.blue,
   );
+  static const TextStyle homeLinks = TextStyle(
+    color: ColorsManeger.blue,
+    fontSize: 13,
+    fontWeight: FontWeight.w500,
+    
+  );
 static const TextStyle eventBuy = TextStyle(
     color: ColorsManeger.green,
     fontSize: 23,
@@ -96,6 +102,12 @@ static const TextStyle eventBuy = TextStyle(
     color: ColorsManeger.black,
     fontSize: 19,
     fontWeight: FontWeight.w500,
+    
+  );
+  static const TextStyle footer = TextStyle(
+    color: ColorsManeger.white,
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
     
   );
 }
