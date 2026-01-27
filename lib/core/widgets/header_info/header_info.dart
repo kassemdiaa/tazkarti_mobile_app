@@ -22,14 +22,14 @@ class _HeaderInfoState extends State<HeaderInfo> {
             SizedBox(width: 12.w),
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(28),
-                border: Border.all(color: ColorsManeger.gray, width: 1.5),
+                borderRadius: BorderRadius.circular(28.r),
+                border: Border.all(color: ColorsManeger.gray, width: 1.5.w),
               ),
 
               child: ClipRRect(
-                borderRadius: BorderRadiusGeometry.circular(28),
+                borderRadius: BorderRadiusGeometry.circular(28.r),
 
-                child: Image.asset(AssetsManeger.avatar, width: 70),
+                child: Image.asset(AssetsManeger.avatar, width: 70.w),
               ),
             ),
             SizedBox(width: 12.w),
@@ -38,7 +38,7 @@ class _HeaderInfoState extends State<HeaderInfo> {
               children: [
                 Text(
                   'Welcome',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
                 ),
                 Text('Kassem Elgammal', style: FontManeger.name),
                 Row(
@@ -47,7 +47,7 @@ class _HeaderInfoState extends State<HeaderInfo> {
                       'Tazkarti Id',
                       style: TextStyle(
                         color: ColorsManeger.gray,
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w400,
                       ),
                     ),

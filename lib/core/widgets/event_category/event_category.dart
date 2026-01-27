@@ -24,19 +24,19 @@ class _EventCategoryState extends State<EventCategory> {
       },
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(16.r),
           border: Border.all(
             color: const Color.fromARGB(39, 202, 201, 201),
             width: 1.5,
           ),
         ),
-        margin: EdgeInsets.all(8),
+        margin: EdgeInsets.symmetric(horizontal: 8.w,vertical: 8.h),
         child: Column(
           children: [
             ClipRRect(
               borderRadius: BorderRadiusGeometry.only(
-                topLeft: Radius.circular(16),
-                topRight: Radius.circular(16),
+                topLeft: Radius.circular(16.r),
+                topRight: Radius.circular(16.r),
               ),
               child: Image.asset(widget.picPath),
             ),

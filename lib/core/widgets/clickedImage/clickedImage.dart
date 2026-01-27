@@ -26,10 +26,10 @@ class ClickedImage extends StatelessWidget {
             width: 110.w,
             decoration: BoxDecoration(
               color: ColorsManeger.white,
-              borderRadius: BorderRadius.all(Radius.circular(1000)),
+              borderRadius: BorderRadius.all(Radius.circular(1000.r)),
               border: Border.all(
                 color: isSelected ? ColorsManeger.green : Colors.transparent,
-                width: 2,
+                width: 2.w,
               ),
             ),
             child: Image.asset(AssetsManeger.catImage),
