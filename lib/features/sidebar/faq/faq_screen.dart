@@ -26,14 +26,14 @@ class _FaqScreenState extends State<FaqScreen> {
       key: _scaffoldKey,
       appBar: AppBar(
         backgroundColor: ColorsManeger.black,
-        title: SvgPicture.asset(SvgManeger.logo, width: 70),
+        title: SvgPicture.asset(SvgManeger.logo, width: 70.w),
         actions: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.w),
             child: Icon(
               CupertinoIcons.globe,
               color: ColorsManeger.white,
-              size: 28,
+              size: 28.sp,
             ),
           ),
         ],
@@ -44,7 +44,7 @@ class _FaqScreenState extends State<FaqScreen> {
           icon: Icon(
             CupertinoIcons.line_horizontal_3,
             color: ColorsManeger.white,
-            size: 28,
+            size: 28.sp,
           ),
         ),
       ),
@@ -70,7 +70,7 @@ class _FaqScreenState extends State<FaqScreen> {
               separatorBuilder: (context, index) => Container(
                 color: ColorsManeger.gray,
                 width: double.infinity,
-                height: 1,
+                height: 1.h,
                 margin: EdgeInsets.symmetric(horizontal: 20.w),
               ),
             ),
@@ -88,7 +88,7 @@ class _FaqScreenState extends State<FaqScreen> {
               separatorBuilder: (context, index) => Container(
                 color: ColorsManeger.gray,
                 width: double.infinity,
-                height: 1,
+                height: 1.h,
                 margin: EdgeInsets.symmetric(horizontal: 20.w),
               ),
             ),
@@ -105,7 +105,7 @@ class _FaqScreenState extends State<FaqScreen> {
               separatorBuilder: (context, index) => Container(
                 color: ColorsManeger.gray,
                 width: double.infinity,
-                height: 1,
+                height: 1.h,
                 margin: EdgeInsets.symmetric(horizontal: 20.w),
               ),
             ),
@@ -123,7 +123,7 @@ class _FaqScreenState extends State<FaqScreen> {
               separatorBuilder: (context, index) => Container(
                 color: ColorsManeger.gray,
                 width: double.infinity,
-                height: 1,
+                height: 1.h,
                 margin: EdgeInsets.symmetric(horizontal: 20.w),
               ),
             ),
@@ -141,7 +141,7 @@ class _FaqScreenState extends State<FaqScreen> {
               separatorBuilder: (context, index) => Container(
                 color: ColorsManeger.gray,
                 width: double.infinity,
-                height: 1,
+                height: 1.h,
                 margin: EdgeInsets.symmetric(horizontal: 20.w),
               ),
             ),
@@ -159,7 +159,7 @@ class _FaqScreenState extends State<FaqScreen> {
               separatorBuilder: (context, index) => Container(
                 color: ColorsManeger.gray,
                 width: double.infinity,
-                height: 1,
+                height: 1.h,
                 margin: EdgeInsets.symmetric(horizontal: 20.w),
               ),
             ),

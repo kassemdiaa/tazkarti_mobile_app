@@ -28,7 +28,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 icon: Icon(
                   Icons.navigate_before_outlined,
                   color: ColorsManeger.white,
-                  size: 40.r,
+                  size: 40.sp,
                 ),
                 onPressed: () {
                   Navigator.pop(context);
@@ -45,9 +45,9 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 },
                 child: Text('HOME', style: FontManeger.drawerTitles),
               ),
-              SizedBox(height: 10),
-              Container(color: ColorsManeger.white, width: 270, height: 1),
-              SizedBox(height: 10),
+              SizedBox(height: 10.h),
+              Container(color: ColorsManeger.white, width: 270.w, height: 1.h),
+              SizedBox(height: 10.h),
               InkWell(
                 onTap: () {
                   Navigator.pushNamed(
@@ -60,36 +60,36 @@ class _CustomDrawerState extends State<CustomDrawer> {
                   style: FontManeger.drawerTitles,
                 ),
               ),
-              SizedBox(height: 10),
-              Container(color: ColorsManeger.white, width: 270, height: 1),
-              SizedBox(height: 10),
+              SizedBox(height: 10.h),
+              Container(color: ColorsManeger.white, width: 270.w, height: 1.h),
+              SizedBox(height: 10.h),
               InkWell(
                 onTap: () {
                   Navigator.pushNamed(context, RoutesManeger.ourStoresScreen);
                 },
                 child: Text('OUR STORES', style: FontManeger.drawerTitles),
               ),
-              SizedBox(height: 10),
-              Container(color: ColorsManeger.white, width: 270, height: 1),
-              SizedBox(height: 10),
+              SizedBox(height: 10.h),
+              Container(color: ColorsManeger.white, width: 270.w, height: 1.h),
+              SizedBox(height: 10.h),
               InkWell(
                 onTap: () {
                   Navigator.pushNamed(context, RoutesManeger.faqScreen);
                 },
                 child: Text('FAQ', style: FontManeger.drawerTitles),
               ),
-              SizedBox(height: 10),
-              Container(color: ColorsManeger.white, width: 270, height: 1),
-              SizedBox(height: 10),
+              SizedBox(height: 10.h),
+              Container(color: ColorsManeger.white, width: 270.w, height: 1.h),
+              SizedBox(height: 10.h),
               InkWell(
                 onTap: () {
                   Navigator.pushNamed(context, RoutesManeger.aboutScreen);
                 },
                 child: Text('ABOUT TAZKARTI', style: FontManeger.drawerTitles),
               ),
-              SizedBox(height: 10),
-              Container(color: ColorsManeger.white, width: 270, height: 1),
-              SizedBox(height: 10),
+              SizedBox(height: 10.h),
+              Container(color: ColorsManeger.white, width: 270.w, height: 1.h),
+              SizedBox(height: 10.h),
               InkWell(
                 onTap: () {
                   Navigator.pushNamed(context, RoutesManeger.contactUsScreen);
@@ -107,7 +107,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
 
                   await launchUrl(url, mode: LaunchMode.inAppBrowserView);
                 },
-                icon: Icon(Icons.facebook, color: ColorsManeger.gray,size: 30,),
+                icon: Icon(Icons.facebook, color: ColorsManeger.gray,size: 30.sp,),
               ),
               IconButton(
                 onPressed: () async {
@@ -115,7 +115,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
 
                   await launchUrl(url, mode: LaunchMode.externalApplication);
                 },
-                icon: Icon(FontAwesomeIcons.twitter, color: ColorsManeger.gray,size: 30,),
+                icon: Icon(FontAwesomeIcons.twitter, color: ColorsManeger.gray,size: 30.sp,),
               ),
               IconButton(
                 onPressed: () async {
@@ -126,7 +126,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 icon: Icon(
                   FontAwesomeIcons.instagram,
                   color: ColorsManeger.gray,
-                  size: 30,
+                  size: 30.sp,
                 ),
               ),
             ],

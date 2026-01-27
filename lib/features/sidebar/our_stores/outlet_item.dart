@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tazkarti/core/colors/colors.dart';
 
 class OutletItem extends StatefulWidget {
@@ -37,7 +38,7 @@ class _OutletItemState extends State<OutletItem> {
               });
             },
             child: Container(
-              padding: EdgeInsets.all(8),
+              padding: EdgeInsets.symmetric(horizontal: 8.w,vertical: 8.h),
               child: Row(
                 children: [
                   Expanded(
@@ -51,7 +52,7 @@ class _OutletItemState extends State<OutletItem> {
                           widget.dedicatedTo,
                           style: TextStyle(
                             color: ColorsManeger.black,
-                            fontSize: 14,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -68,7 +69,7 @@ class _OutletItemState extends State<OutletItem> {
                             widget.outletName,
                             style: TextStyle(
                               color: ColorsManeger.black,
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -78,7 +79,7 @@ class _OutletItemState extends State<OutletItem> {
                             widget.city,
                             style: TextStyle(
                               color: ColorsManeger.black,
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -107,20 +108,20 @@ class _OutletItemState extends State<OutletItem> {
                       children: [
                         Expanded(
                           child: Container(
-                            padding: EdgeInsets.all(16),
+                            padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 16.h),
                             decoration: BoxDecoration(
-                              border: Border(right: BorderSide(width: 1,color: ColorsManeger.gray))
+                              border: Border(right: BorderSide(width: 1.w,color: ColorsManeger.gray))
                             ),
                             child: Text('District',style: TextStyle(
                               color: ColorsManeger.black,
-                              fontSize: 15,
+                              fontSize: 15.sp,
                               fontWeight: FontWeight.bold,
                             ),),
                           ),
                         ),
                         Expanded(
                           child: Container(
-                            padding: EdgeInsets.all(16),
+                            padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 16.h),
                             decoration: BoxDecoration(
                               
                             ),
@@ -133,20 +134,20 @@ class _OutletItemState extends State<OutletItem> {
                       children: [
                         Expanded(
                           child: Container(
-                            padding: EdgeInsets.all(16),
+                            padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 16.h),
                             decoration: BoxDecoration(
-                              border: Border(right: BorderSide(color: ColorsManeger.gray,width: 1))
+                              border: Border(right: BorderSide(color: ColorsManeger.gray,width: 1.w))
                             ),
                             child: Text('Address',style: TextStyle(
                               color: ColorsManeger.black,
-                              fontSize: 15,
+                              fontSize: 15.sp,
                               fontWeight: FontWeight.bold,
                             ),),
                           ),
                         ),
                         Expanded(
                           child: Container(
-                            padding: EdgeInsets.all(16),
+                            padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 16.h),
                             decoration: BoxDecoration(
                               
                             ),

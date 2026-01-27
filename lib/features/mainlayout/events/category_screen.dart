@@ -25,14 +25,14 @@ class _CategoryScreenState extends State<CategoryScreen> {
       key: _scaffoldKey,
       appBar: AppBar(
         backgroundColor: ColorsManeger.black,
-        title: SvgPicture.asset(SvgManeger.logo, width: 70),
+        title: SvgPicture.asset(SvgManeger.logo, width: 70.w),
         actions: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.w),
             child: Icon(
               CupertinoIcons.globe,
               color: ColorsManeger.white,
-              size: 28,
+              size: 28.sp,
             ),
           ),
         ],
@@ -43,7 +43,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
           icon: Icon(
             CupertinoIcons.line_horizontal_3,
             color: ColorsManeger.white,
-            size: 28,
+            size: 28.sp,
           ),
         ),
       ),

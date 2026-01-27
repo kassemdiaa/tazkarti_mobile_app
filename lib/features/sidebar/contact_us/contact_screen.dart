@@ -27,14 +27,14 @@ class _ContactScreenState extends State<ContactScreen> {
       key: _scaffoldKey,
       appBar: AppBar(
         backgroundColor: ColorsManeger.black,
-        title: SvgPicture.asset(SvgManeger.logo, width: 70),
+        title: SvgPicture.asset(SvgManeger.logo, width: 70.w),
         actions: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.w),
             child: Icon(
               CupertinoIcons.globe,
               color: ColorsManeger.white,
-              size: 28,
+              size: 28.sp,
             ),
           ),
         ],
@@ -45,7 +45,7 @@ class _ContactScreenState extends State<ContactScreen> {
           icon: Icon(
             CupertinoIcons.line_horizontal_3,
             color: ColorsManeger.white,
-            size: 28,
+            size: 28.sp,
           ),
         ),
       ),
@@ -62,7 +62,7 @@ class _ContactScreenState extends State<ContactScreen> {
                 'For inquiries, suggestions, or complaints,',
                 style: TextStyle(
                   color: ColorsManeger.black,
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -70,7 +70,7 @@ class _ContactScreenState extends State<ContactScreen> {
                 'contact us at',
                 style: TextStyle(
                   color: ColorsManeger.black,
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -78,14 +78,14 @@ class _ContactScreenState extends State<ContactScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.call, color: ColorsManeger.green, size: 50),
+                  Icon(Icons.call, color: ColorsManeger.green, size: 50.sp),
                   SizedBox(width: 10.w),
                   Text(
                     '15355',
                     style: TextStyle(
                       color: ColorsManeger.green,
                       fontWeight: FontWeight.w900,
-                      fontSize: 50,
+                      fontSize: 50.sp,
                     ),
                   ),
                 ],
@@ -102,7 +102,7 @@ class _ContactScreenState extends State<ContactScreen> {
                     style: TextStyle(
                       color: const Color.fromARGB(255, 116, 116, 116),
                       fontWeight: FontWeight.w700,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                     ),
                   ),
                 ],
@@ -124,8 +124,8 @@ class _ContactScreenState extends State<ContactScreen> {
                       child: Container(
                         color: Colors.white,
                         padding: EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 8,
+                          horizontal: 16.w,
+                          vertical: 8.h,
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -134,7 +134,7 @@ class _ContactScreenState extends State<ContactScreen> {
                               selected,
                               style: TextStyle(
                                 color: ColorsManeger.gray,
-                                fontSize: 20,
+                                fontSize: 20.sp,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -144,7 +144,7 @@ class _ContactScreenState extends State<ContactScreen> {
                               child: Icon(
                                 Icons.keyboard_arrow_down,
                                 color: ColorsManeger.gray,
-                                size: 22,
+                                size: 22.sp,
                               ),
                             ),
                           ],
@@ -163,12 +163,12 @@ class _ContactScreenState extends State<ContactScreen> {
                             color: Colors.white,
                             border: Border.all(
                               color: ColorsManeger.black,
-                              width: 1,
+                              width: 1.w,
                             ),
                           ),
                           width: double.infinity,
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 6),
+                            padding:  EdgeInsets.symmetric(vertical: 6.h),
                             child: Column(
                               children: [
                                 InkWell(
@@ -196,7 +196,7 @@ class _ContactScreenState extends State<ContactScreen> {
                                                 ? ColorsManeger.black
                                                 : ColorsManeger.gray,
                                             fontWeight: FontWeight.w400,
-                                            fontSize: 18,
+                                            fontSize: 18.sp,
                                           ),
                                         ),
                                       ],
@@ -229,7 +229,7 @@ class _ContactScreenState extends State<ContactScreen> {
                                                 ? ColorsManeger.black
                                                 : ColorsManeger.gray,
                                             fontWeight: FontWeight.w400,
-                                            fontSize: 18,
+                                            fontSize: 18.sp,
                                           ),
                                         ),
                                       ],
@@ -261,7 +261,7 @@ class _ContactScreenState extends State<ContactScreen> {
                                                 ? ColorsManeger.black
                                                 : ColorsManeger.gray,
                                             fontWeight: FontWeight.w400,
-                                            fontSize: 18,
+                                            fontSize: 18.sp,
                                           ),
                                         ),
                                       ],
@@ -293,7 +293,7 @@ class _ContactScreenState extends State<ContactScreen> {
                                                 ? ColorsManeger.black
                                                 : ColorsManeger.gray,
                                             fontWeight: FontWeight.w400,
-                                            fontSize: 18,
+                                            fontSize: 18.sp,
                                           ),
                                         ),
                                       ],
@@ -318,7 +318,7 @@ class _ContactScreenState extends State<ContactScreen> {
                     style: TextStyle(
                       color: const Color.fromARGB(255, 116, 116, 116),
                       fontWeight: FontWeight.w700,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                     ),
                   ),
                 ],
@@ -342,7 +342,7 @@ class _ContactScreenState extends State<ContactScreen> {
                     style: TextStyle(
                       color: const Color.fromARGB(255, 116, 116, 116),
                       fontWeight: FontWeight.w700,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                     ),
                   ),
                 ],
@@ -366,7 +366,7 @@ class _ContactScreenState extends State<ContactScreen> {
                     style: TextStyle(
                       color: const Color.fromARGB(255, 116, 116, 116),
                       fontWeight: FontWeight.w700,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                     ),
                   ),
                 ],
@@ -390,7 +390,7 @@ class _ContactScreenState extends State<ContactScreen> {
                     style: TextStyle(
                       color: const Color.fromARGB(255, 116, 116, 116),
                       fontWeight: FontWeight.w700,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                     ),
                   ),
                 ],
@@ -414,7 +414,7 @@ class _ContactScreenState extends State<ContactScreen> {
                     style: TextStyle(
                       color: const Color.fromARGB(255, 116, 116, 116),
                       fontWeight: FontWeight.w700,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                     ),
                   ),
                 ],

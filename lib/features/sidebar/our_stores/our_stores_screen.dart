@@ -26,14 +26,14 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
       key: _scaffoldKey,
       appBar: AppBar(
         backgroundColor: ColorsManeger.black,
-        title: SvgPicture.asset(SvgManeger.logo, width: 70),
+        title: SvgPicture.asset(SvgManeger.logo, width: 70.w),
         actions: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.w),
             child: Icon(
               CupertinoIcons.globe,
               color: ColorsManeger.white,
-              size: 28,
+              size: 28.sp,
             ),
           ),
         ],
@@ -44,7 +44,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
           icon: Icon(
             CupertinoIcons.line_horizontal_3,
             color: ColorsManeger.white,
-            size: 28,
+            size: 28.sp,
           ),
         ),
       ),
@@ -56,11 +56,11 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
           SizedBox(height: 20.h),
           Container(
             width: double.infinity,
-            margin: EdgeInsets.symmetric(horizontal: 16),
+            margin: EdgeInsets.symmetric(horizontal: 16.w),
             decoration: BoxDecoration(
               border: Border.all(
                 color: isExpanded ? Colors.transparent : ColorsManeger.gray,
-                width: 1.5,
+                width: 1.5.w,
               ),
             ),
             child: Column(
@@ -77,7 +77,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                     color: isExpanded
                         ? ColorsManeger.green
                         : ColorsManeger.white,
-                    padding: EdgeInsets.all(16),
+                    padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 16.h),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -87,7 +87,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                             color: isExpanded
                                 ? ColorsManeger.white
                                 : ColorsManeger.black,
-                            fontSize: 20,
+                            fontSize: 20.sp,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -99,7 +99,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                             color: isExpanded
                                 ? ColorsManeger.white
                                 : ColorsManeger.gray,
-                            size: 30,
+                            size: 30.sp,
                           ),
                         ),
                       ],
@@ -116,7 +116,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                     child: Container(
                       decoration: BoxDecoration(
                         color: ColorsManeger.white,
-                        border: Border.all(color: ColorsManeger.gray, width: 1),
+                        border: Border.all(color: ColorsManeger.gray, width: 1.w),
                       ),
                       width: double.infinity,
                       child: Column(
@@ -135,7 +135,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                                   child: Text(
                                     'Dedicated To',
                                     style: TextStyle(
-                                      fontSize: 15,
+                                      fontSize: 15.sp,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
@@ -148,7 +148,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                                         child: Text(
                                           'Outlet',
                                           style: TextStyle(
-                                            fontSize: 15,
+                                            fontSize: 15.sp,
                                             fontWeight: FontWeight.w500,
                                           ),
                                         ),
@@ -157,7 +157,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                                         child: Text(
                                           'City',
                                           style: TextStyle(
-                                            fontSize: 15,
+                                            fontSize: 15.sp,
                                             fontWeight: FontWeight.w500,
                                           ),
                                         ),
@@ -181,13 +181,13 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
           SizedBox(height: 16.h),
           Container(
             width: double.infinity,
-            margin: EdgeInsets.symmetric(horizontal: 16),
+            margin: EdgeInsets.symmetric(horizontal: 16.w),
             decoration: BoxDecoration(
               border: Border.all(
                 color: isExpandedSport
                     ? Colors.transparent
                     : ColorsManeger.gray,
-                width: 1.5,
+                width: 1.5.w,
               ),
             ),
             child: Column(
@@ -204,7 +204,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                     color: isExpandedSport
                         ? ColorsManeger.green
                         : ColorsManeger.white,
-                    padding: EdgeInsets.all(16),
+                    padding: EdgeInsets.symmetric(horizontal: 16.w,vertical: 16.h),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -214,7 +214,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                             color: isExpandedSport
                                 ? ColorsManeger.white
                                 : ColorsManeger.black,
-                            fontSize: 20,
+                            fontSize: 20.sp,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -226,7 +226,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                             color: isExpandedSport
                                 ? ColorsManeger.white
                                 : ColorsManeger.gray,
-                            size: 30,
+                            size: 30.sp,
                           ),
                         ),
                       ],
@@ -243,7 +243,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                     child: Container(
                       decoration: BoxDecoration(
                         color: ColorsManeger.white,
-                        border: Border.all(color: ColorsManeger.gray, width: 1),
+                        border: Border.all(color: ColorsManeger.gray, width: 1.w),
                       ),
                       width: double.infinity,
                       child: Column(
@@ -262,7 +262,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                                   child: Text(
                                     'Dedicated To',
                                     style: TextStyle(
-                                      fontSize: 15,
+                                      fontSize: 15.sp,
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
@@ -275,7 +275,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                                         child: Text(
                                           'Outlet',
                                           style: TextStyle(
-                                            fontSize: 15,
+                                            fontSize: 15.sp,
                                             fontWeight: FontWeight.w500,
                                           ),
                                         ),
@@ -284,7 +284,7 @@ class _OurStoresScreenState extends State<OurStoresScreen> {
                                         child: Text(
                                           'City',
                                           style: TextStyle(
-                                            fontSize: 15,
+                                            fontSize: 15.sp,
                                             fontWeight: FontWeight.w500,
                                           ),
                                         ),

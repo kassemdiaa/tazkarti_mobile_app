@@ -1,112 +1,113 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tazkarti/core/colors/colors.dart';
 
 abstract class FontManeger {
-  static const TextStyle smallTitle = TextStyle(
+  static  TextStyle smallTitle = TextStyle(
     color: ColorsManeger.gray,
-    fontSize: 12,
+    fontSize: 12.sp,
     fontWeight: FontWeight.w500,
   );
-  static const TextStyle drawerTitles = TextStyle(
+  static  TextStyle drawerTitles = TextStyle(
     color: ColorsManeger.white,
-    fontSize: 20,
+    fontSize: 20.sp,
     fontWeight: FontWeight.w400,
   );
-  static const TextStyle register = TextStyle(
+  static  TextStyle register = TextStyle(
     color: ColorsManeger.green,
-    fontSize: 22,
+    fontSize: 22.sp,
     fontWeight: FontWeight.w400,
   );
-  static const TextStyle bigTitle = TextStyle(
+  static  TextStyle bigTitle = TextStyle(
     color: ColorsManeger.black,
-    fontSize: 24,
+    fontSize: 24.sp,
     fontWeight: FontWeight.w800,
   );
-  static const TextStyle tazkartiIdPass = TextStyle(
+  static  TextStyle tazkartiIdPass = TextStyle(
     color: Color.fromARGB(255, 116, 115, 115),
-    fontSize: 20,
+    fontSize: 20.sp,
     fontWeight: FontWeight.w600,
   );
-  static const TextStyle forget = TextStyle(
+  static  TextStyle forget = TextStyle(
     color: ColorsManeger.blue,
-    fontSize: 13,
+    fontSize: 13.sp,
     fontWeight: FontWeight.w500,
   );
-  static const TextStyle notHaveAcc = TextStyle(
+  static  TextStyle notHaveAcc = TextStyle(
     color: ColorsManeger.black,
-    fontSize: 16,
+    fontSize: 16.sp,
     fontWeight: FontWeight.w400,
   );
-  static const TextStyle botton = TextStyle(
+  static  TextStyle botton = TextStyle(
     color: ColorsManeger.white,
-    fontSize: 18,
+    fontSize: 18.sp,
     fontWeight: FontWeight.w700,
   );
-  static const TextStyle hintStyle = TextStyle(
+  static  TextStyle hintStyle = TextStyle(
     color: ColorsManeger.gray,
-    fontSize: 20,
+    fontSize: 20.sp,
     fontWeight: FontWeight.w400,
     
   );
-  static const TextStyle name = TextStyle(
+  static  TextStyle name = TextStyle(
     color: ColorsManeger.black,
-    fontSize: 20,
+    fontSize: 20.sp,
     fontWeight: FontWeight.w600,
     
   );
-  static const TextStyle eventDetails = TextStyle(
+  static  TextStyle eventDetails = TextStyle(
     color: ColorsManeger.black,
-    fontSize: 20,
+    fontSize: 20.sp,
     fontWeight: FontWeight.w300,
     
   );
-  static const TextStyle eventlocation = TextStyle(
+  static  TextStyle eventlocation = TextStyle(
     color: ColorsManeger.blue,
-    fontSize: 20,
+    fontSize: 20.sp,
     fontWeight: FontWeight.w400,
     decoration: TextDecoration.underline,
     decorationColor: ColorsManeger.blue,
   );
-  static const TextStyle homeLinks = TextStyle(
+  static  TextStyle homeLinks = TextStyle(
     color: ColorsManeger.blue,
-    fontSize: 13,
+    fontSize: 13.sp,
     fontWeight: FontWeight.w500,
     
   );
-static const TextStyle eventBuy = TextStyle(
+static  TextStyle eventBuy = TextStyle(
     color: ColorsManeger.green,
-    fontSize: 23,
+    fontSize: 23.sp,
     fontWeight: FontWeight.w500,
     
   );
-  static const TextStyle categoryTitle = TextStyle(
+  static  TextStyle categoryTitle = TextStyle(
     color: ColorsManeger.gray,
-    fontSize: 25,
+    fontSize: 25.sp,
     fontWeight: FontWeight.w300,
     
   );
-  static const TextStyle faqTitle = TextStyle(
+  static  TextStyle faqTitle = TextStyle(
     color: ColorsManeger.black,
-    fontSize: 28,
+    fontSize: 28.sp,
     fontWeight: FontWeight.w300,
     
   );
-  static const TextStyle aboutTitle = TextStyle(
+  static  TextStyle aboutTitle = TextStyle(
     color: ColorsManeger.black,
-    fontSize: 20,
+    fontSize: 20.sp,
     fontWeight: FontWeight.w500,
     
   );
   
-  static const TextStyle aboutFooter = TextStyle(
+  static  TextStyle aboutFooter = TextStyle(
     color: ColorsManeger.black,
-    fontSize: 19,
+    fontSize: 19.sp,
     fontWeight: FontWeight.w500,
     
   );
-  static const TextStyle footer = TextStyle(
+  static  TextStyle footer = TextStyle(
     color: ColorsManeger.white,
-    fontSize: 14,
+    fontSize: 14.sp,
     fontWeight: FontWeight.w400,
     
   );

@@ -23,7 +23,7 @@ class _MatchesScreenState extends State<MatchesScreen> {
         children: [
           Container(
             decoration: BoxDecoration(color: ColorsManeger.white),
-            padding: REdgeInsets.only(left: 100, right: 15),
+            padding: REdgeInsets.only(left: 100.w, right: 15.w),
             width: double.infinity.w,
             height: 50.h,
             child: Marquee(
@@ -37,9 +37,9 @@ class _MatchesScreenState extends State<MatchesScreen> {
               scrollAxis: Axis.horizontal,
             ),
           ),
-          SizedBox(width: double.infinity, height: 40),
+          SizedBox(width: double.infinity, height: 40.h),
           Padding(
-            padding: REdgeInsets.symmetric(horizontal: 15),
+            padding: REdgeInsets.symmetric(horizontal: 15.w),
             child: Row(
               children: [
                 Text(
@@ -55,7 +55,7 @@ class _MatchesScreenState extends State<MatchesScreen> {
           ),
           SizedBox(height: 30.h),
           Padding(
-            padding: REdgeInsets.symmetric(horizontal: 15),
+            padding: REdgeInsets.symmetric(horizontal: 15.w),
             child: Row(
               children: [
                 ClickedImage(

@@ -47,7 +47,7 @@ class _MainLayoutState extends State<MainLayout> {
           children: [
             SvgPicture.asset(
               icon,
-              width: 30,
+              width: 30.w,
               color: isSelected ? ColorsManeger.black : ColorsManeger.gray,
             ),
             SizedBox(height: 4.h),
@@ -68,14 +68,14 @@ class _MainLayoutState extends State<MainLayout> {
       key: _scaffoldKey,
       appBar: AppBar(
         backgroundColor: ColorsManeger.black,
-        title: SvgPicture.asset(SvgManeger.logo, width: 70),
+        title: SvgPicture.asset(SvgManeger.logo, width: 70.w),
         actions: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.w),
             child: Icon(
               CupertinoIcons.globe,
               color: ColorsManeger.white,
-              size: 28,
+              size: 28.sp,
             ),
           ),
         ],
@@ -86,7 +86,7 @@ class _MainLayoutState extends State<MainLayout> {
           icon: Icon(
             CupertinoIcons.line_horizontal_3,
             color: ColorsManeger.white,
-            size: 28,
+            size: 28.sp,
           ),
         ),
       ),

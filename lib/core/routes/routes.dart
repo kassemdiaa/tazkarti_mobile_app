@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:tazkarti/features/authentication/login/login_screen.dart';
 import 'package:tazkarti/features/authentication/register/register_screen.dart';
 import 'package:tazkarti/features/mainlayout/events/category_screen.dart';

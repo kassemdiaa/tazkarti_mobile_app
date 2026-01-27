@@ -22,14 +22,14 @@ class _LoginScreenState extends State<LoginScreen> {
       key: _scaffoldKey,
       appBar: AppBar(
         backgroundColor: ColorsManeger.black,
-        title: SvgPicture.asset('assets/logo1.svg', width: 70),
+        title: SvgPicture.asset('assets/logo1.svg', width: 70.w),
         actions: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.w),
             child: Icon(
               CupertinoIcons.globe,
               color: ColorsManeger.white,
-              size: 28,
+              size: 28.sp,
             ),
           ),
         ],
@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
           icon: Icon(
             CupertinoIcons.line_horizontal_3,
             color: ColorsManeger.white,
-            size: 28,
+            size: 28.sp,
           ),
         ),
       ),
@@ -54,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
             'Fill in all the required fields marked by (*).',
             style: FontManeger.smallTitle,
           ),
-          SizedBox(height: 26),
+          SizedBox(height: 26.h),
           Opacity(
             opacity: 0.5,
             child: Container(
@@ -63,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 1,
             ),
           ),
-          SizedBox(height: 36),
+          SizedBox(height: 36.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 14.w),
             child: Row(
@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
           ),
-          SizedBox(height: 8),
+          SizedBox(height: 8.h),
           Padding(
             padding:  EdgeInsets.symmetric(horizontal: 12.w),
             child: TextFormField(
@@ -82,7 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 enabledBorder: InputBorder.none,
                 prefixIcon: Opacity(
                   opacity: 0.5,
-                  child: Icon(Icons.person, size: 32, color: ColorsManeger.gray),
+                  child: Icon(Icons.person, size: 32.sp, color: ColorsManeger.gray),
                 ),
                 hint: Opacity(
                   opacity: 0.5,
@@ -91,13 +91,13 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-          SizedBox(height: 26),
+          SizedBox(height: 26.h),
           Padding(
             padding: EdgeInsets.only(left: 14.w),
             child: Row(
               children: [
                 Text('Password *', style: FontManeger.tazkartiIdPass),
-                SizedBox(width: 14),
+                SizedBox(width: 14.w),
                 InkWell(
                   onTap: () {},
                   child: Text('Forgot Tazkarti ID?', style: FontManeger.forget),
@@ -110,7 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
           ),
-          SizedBox(height: 8),
+          SizedBox(height: 8.h),
           Padding(
             padding:  EdgeInsets.symmetric(horizontal: 12.w),
             child: TextFormField(
@@ -123,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   opacity: 0.5,
                   child: Icon(
                     Icons.lock_open_rounded,
-                    size: 32,
+                    size: 32.sp,
                     color: ColorsManeger.gray,
                   ),
                 ),
@@ -134,12 +134,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-          SizedBox(height: 26),
+          SizedBox(height: 26.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('Do not have an account?', style: FontManeger.notHaveAcc),
-              SizedBox(width: 10),
+              SizedBox(width: 10.w),
               InkWell(
                 onTap: () {Navigator.pushReplacementNamed(context, RoutesManeger.registerScreen);},
                 child: Row(
@@ -147,16 +147,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     Icon(
                       Icons.person_add_alt_outlined,
                       color: ColorsManeger.green,
-                      size: 30,
+                      size: 30.sp,
                     ),
-                    SizedBox(width: 4),
+                    SizedBox(width: 4.w),
                     Text('Register Now!', style: FontManeger.register),
                   ],
                 ),
               ),
             ],
           ),
-          SizedBox(height: 26),
+          SizedBox(height: 26.h),
           ElevatedButton(
             onPressed: () {Navigator.pushReplacementNamed(context, RoutesManeger.mainlayout);},
             style: ElevatedButton.styleFrom(

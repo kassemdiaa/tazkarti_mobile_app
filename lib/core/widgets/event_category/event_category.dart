@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tazkarti/core/assets/assets.dart';
-import 'package:tazkarti/core/colors/colors.dart';
 import 'package:tazkarti/core/fonts/fonts.dart';
 import 'package:tazkarti/core/routes/routes.dart';
 
 class EventCategory extends StatefulWidget {
-  const EventCategory({super.key, required this.categoryName, required this.picPath});
+  const EventCategory({
+    super.key,
+    required this.categoryName,
+    required this.picPath,
+  });
   final String picPath;
-final String categoryName;
+  final String categoryName;
   @override
   State<EventCategory> createState() => _EventCategoryState();
 }
@@ -23,7 +25,10 @@ class _EventCategoryState extends State<EventCategory> {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: const Color.fromARGB(39, 202, 201, 201), width: 1.5),
+          border: Border.all(
+            color: const Color.fromARGB(39, 202, 201, 201),
+            width: 1.5,
+          ),
         ),
         margin: EdgeInsets.all(8),
         child: Column(
@@ -37,7 +42,10 @@ class _EventCategoryState extends State<EventCategory> {
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 8.h),
-              child: Text(widget.categoryName, style: FontManeger.categoryTitle),
+              child: Text(
+                widget.categoryName,
+                style: FontManeger.categoryTitle,
+              ),
             ),
           ],
         ),

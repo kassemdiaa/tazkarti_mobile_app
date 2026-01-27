@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -53,9 +52,9 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Text('View All Matches', style: FontManeger.homeLinks),
           ),
         ),
-        SizedBox(height: 16,),
+        SizedBox(height: 16.h),
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 14),
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 14.h),
           width: double.infinity,
           color: ColorsManeger.darkGray,
           child: Column(
@@ -72,8 +71,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text('Contact Us', style: FontManeger.footer),
                 ],
               ),
-              SizedBox(height: 12.h,),
-              Text('© 2023 Tazkarti. All rights reserved.',style: TextStyle(color: ColorsManeger.white,fontSize: 13),)
+              SizedBox(height: 12.h),
+              Text(
+                '© 2023 Tazkarti. All rights reserved.',
+                style: TextStyle(color: ColorsManeger.white, fontSize: 13.sp),
+              ),
             ],
           ),
         ),

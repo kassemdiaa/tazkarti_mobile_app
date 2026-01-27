@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tazkarti/core/colors/colors.dart';
@@ -80,7 +79,7 @@ class _MyTicketsItemState extends State<MyTicketsItem> {
                 child: Column(
                   children: [
                     SizedBox(height: 4.h),
-                    
+
                     Container(
                       color: Colors.white,
                       padding: EdgeInsets.all(100),
@@ -94,8 +93,15 @@ class _MyTicketsItemState extends State<MyTicketsItem> {
                               size: 55,
                               color: ColorsManeger.gray,
                             ),
-                            SizedBox(height: 10.h,),
-                            Text('No data to display.',style:TextStyle(color: ColorsManeger.gray,fontWeight: FontWeight.bold,fontSize: 18))
+                            SizedBox(height: 10.h),
+                            Text(
+                              'No data to display.',
+                              style: TextStyle(
+                                color: ColorsManeger.gray,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
                           ],
                         ),
                       ),
