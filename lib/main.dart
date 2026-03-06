@@ -29,7 +29,7 @@ class TazkartiApp extends StatelessWidget {
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         onGenerateRoute: RoutesManeger.getRoute,
-        initialRoute: RoutesManeger.loginScreen,
+        initialRoute: RoutesManeger.mainlayout,
         locale: Locale('en'),
       ),
     );

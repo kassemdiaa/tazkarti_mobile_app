@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tazkarti/core/fonts/fonts.dart';
 import 'package:tazkarti/core/routes/routes.dart';
 
-class EventCategory extends StatefulWidget {
-  const EventCategory({
+class CategoryItem extends StatefulWidget {
+  const CategoryItem({
     super.key,
     required this.categoryName,
     required this.picPath,
@@ -12,15 +12,15 @@ class EventCategory extends StatefulWidget {
   final String picPath;
   final String categoryName;
   @override
-  State<EventCategory> createState() => _EventCategoryState();
+  State<CategoryItem> createState() => _EventCategoryState();
 }
 
-class _EventCategoryState extends State<EventCategory> {
+class _EventCategoryState extends State<CategoryItem> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, RoutesManeger.categoryScreen);
+        Navigator.pushNamed(context, RoutesManeger.eventsScreen);
       },
       child: Container(
         decoration: BoxDecoration(

@@ -7,7 +7,7 @@ import 'package:tazkarti/core/colors/colors.dart';
 import 'package:tazkarti/core/icons/Icons_maneger.dart';
 import 'package:tazkarti/core/widgets/header_info/header_info.dart';
 import 'package:tazkarti/features/mainlayout/dependents/dependents_screen.dart';
-import 'package:tazkarti/features/mainlayout/events/events_screen.dart';
+import 'package:tazkarti/features/mainlayout/events/categories/categories_screen.dart';
 import 'package:tazkarti/features/mainlayout/home/home_screen.dart';
 import 'package:tazkarti/features/mainlayout/matches/matches_screen.dart';
 import 'package:tazkarti/features/mainlayout/my_tickets/my_tickets_screen.dart';
@@ -27,7 +27,7 @@ class _MainLayoutState extends State<MainLayout> {
   List<Widget> taps = [
     const HomeScreen(),
     const MatchesScreen(),
-    const EventsScreen(),
+    const CategoriesScreen(),
     const MyTicketsScreen(),
     const DependentsScreen(),
   ];

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:marquee/marquee.dart';
 import 'package:tazkarti/core/colors/colors.dart';
 import 'package:tazkarti/core/fonts/fonts.dart';
-import 'package:tazkarti/core/widgets/search_button/search_button.dart';
 import 'package:tazkarti/features/mainlayout/matches/models/match_model.dart';
 import 'package:tazkarti/features/mainlayout/matches/widgets/match_card.dart';
 import 'package:tazkarti/features/mainlayout/matches/widgets/tournament_filter_tab.dart';
