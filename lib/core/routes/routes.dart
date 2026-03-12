@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:tazkarti/features/authentication/login/login_screen.dart';
 import 'package:tazkarti/features/authentication/register/register_screen.dart';
+import 'package:tazkarti/features/mainlayout/events/event_deitails/event_deitails_screen.dart';
 import 'package:tazkarti/features/mainlayout/events/events/events_screen.dart';
 import 'package:tazkarti/features/mainlayout/mainayout.dart';
 import 'package:tazkarti/features/sidebar/about_us/about_screen.dart';
@@ -19,6 +20,7 @@ abstract class RoutesManeger {
   static const String aboutScreen = '/about';
   static const String contactUsScreen = '/contactUs';
   static const String eventsScreen = '/categoryScreen';
+  static const String eventsDeitailsScreen = '/eventsDeitailsScreen';
 
   static Route? getRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -42,6 +44,8 @@ abstract class RoutesManeger {
         return CupertinoPageRoute(builder: (context) => AboutScreen());
       case contactUsScreen:
         return CupertinoPageRoute(builder: (context) => ContactScreen());
+      case eventsDeitailsScreen:
+        return CupertinoPageRoute(builder: (context) => EventDeitailsScreen());
     }
     return null;
   }

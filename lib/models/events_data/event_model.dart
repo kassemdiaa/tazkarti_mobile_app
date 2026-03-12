@@ -5,6 +5,8 @@ class EventModel {
   String name;
   String imagePath;
   String location;
+  String numOfShows;
+  String termsOfEntry;
   bool isSeating;
 
   Map<String, int> categoriesPrices;
@@ -16,6 +18,8 @@ class EventModel {
     required this.imagePath,
     required this.location,
     required this.isSeating,
+    required this.numOfShows,
+    required this.termsOfEntry,
     required this.categoriesPrices,
   });
 }

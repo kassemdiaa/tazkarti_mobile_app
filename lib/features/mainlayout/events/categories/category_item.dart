@@ -18,37 +18,32 @@ class CategoryItem extends StatefulWidget {
 class _EventCategoryState extends State<CategoryItem> {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Navigator.pushNamed(context, RoutesManeger.eventsScreen);
-      },
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: const Color.fromARGB(39, 202, 201, 201),
-            width: 1.5,
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: const Color.fromARGB(39, 202, 201, 201),
+          width: 1.5,
+        ),
+      ),
+      margin: EdgeInsets.symmetric(horizontal: 8.w,vertical: 8.h),
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadiusGeometry.only(
+              topLeft: Radius.circular(16.r),
+              topRight: Radius.circular(16.r),
+            ),
+            child: Image.asset(widget.picPath),
           ),
-        ),
-        margin: EdgeInsets.symmetric(horizontal: 8.w,vertical: 8.h),
-        child: Column(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadiusGeometry.only(
-                topLeft: Radius.circular(16.r),
-                topRight: Radius.circular(16.r),
-              ),
-              child: Image.asset(widget.picPath),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.h),
+            child: Text(
+              widget.categoryName,
+              style: FontManeger.categoryTitle,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.h),
-              child: Text(
-                widget.categoryName,
-                style: FontManeger.categoryTitle,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

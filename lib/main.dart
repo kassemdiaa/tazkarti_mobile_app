@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:tazkarti/core/routes/routes.dart';
 import 'package:tazkarti/providers/bottom_nav_provider/bottom_nav_provider.dart';
 import 'package:tazkarti/providers/registration_provider/registration_provider.dart';
+import 'package:tazkarti/providers/selected_even_provider.dart/selected_event_provider.dart';
 
 void main() {
   runApp(
@@ -11,6 +12,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (context) => BottomNavProvider()),
         ChangeNotifierProvider(create: (context) => RegistrationProvider()),
+        ChangeNotifierProvider(create: (context) => SelectedEventProvider()),
       ],
       child: const TazkartiApp(),
     ),
