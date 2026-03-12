@@ -4,7 +4,9 @@ class EventModel {
   String month;
   String name;
   String imagePath;
+  String location;
   bool isSeating;
+
   Map<String, int> categoriesPrices;
   EventModel({
     required this.name,
@@ -12,6 +14,7 @@ class EventModel {
     required this.month,
     required this.year,
     required this.imagePath,
+    required this.location,
     required this.isSeating,
     required this.categoriesPrices,
   });
