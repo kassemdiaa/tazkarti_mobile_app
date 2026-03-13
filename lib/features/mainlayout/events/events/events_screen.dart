@@ -11,7 +11,7 @@ import 'package:tazkarti/core/widgets/header_info/header_info.dart';
 import 'package:tazkarti/core/widgets/search_button/search_button.dart';
 import 'package:tazkarti/features/mainlayout/events/events/event_item.dart';
 import 'package:tazkarti/features/sidebar/drawer.dart';
-import 'package:tazkarti/models/events_data/event_category_model.dart';
+import 'package:tazkarti/data/models/events_data/event_category_model.dart';
 import 'package:tazkarti/providers/selected_even_provider.dart/selected_event_provider.dart';
 
 class EventsScreen extends StatefulWidget {

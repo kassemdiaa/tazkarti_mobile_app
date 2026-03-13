@@ -1,5 +1,5 @@
 import 'package:tazkarti/core/assets/assets.dart';
-import 'package:tazkarti/models/events_data/event_model.dart';
+import 'package:tazkarti/data/models/events_data/event_model.dart';
 
 class EventCategoryModel {
   String name;
@@ -21,7 +21,7 @@ class EventCategoryModel {
           name: 'Orkestra',
           categoriesPrices: {'Regular': 1000, 'VIP': 3000},
           day: '20',
-          month: '5',
+          month: 'May',
           year: '2026',
           isSeating: true,
           location: 'Cairo Opera House',
@@ -33,7 +33,7 @@ class EventCategoryModel {
           name: 'Omar Khairat',
           categoriesPrices: {'Regular': 1000, 'VIP': 3000},
           day: '20',
-          month: '5',
+          month: 'May',
           year: '2026',
           isSeating: true,
           location: 'Cairo Opera House',
@@ -45,7 +45,7 @@ class EventCategoryModel {
           name: 'Abd Elhalim Newira',
           categoriesPrices: {'Regular': 1000, 'VIP': 3000},
           day: '20',
-          month: '5',
+          month: 'May',
           year: '2026',
           isSeating: true,
           location: 'Cairo Opera House',
@@ -63,7 +63,7 @@ class EventCategoryModel {
           name: 'Calum Scott',
           categoriesPrices: {'Regular': 1000, 'VIP': 3000},
           day: '20',
-          month: '5',
+          month: 'May',
           year: '2026',
           isSeating: true,
           location: 'Grand Egyptian Museum',
@@ -75,7 +75,7 @@ class EventCategoryModel {
           name: 'Brain Maknight',
           categoriesPrices: {'Regular': 1000, 'VIP': 3000},
           day: '20',
-          month: '5',
+          month: 'May',
           year: '2026',
           isSeating: true,
           location: 'Grand Egyptian Museum',
@@ -87,7 +87,7 @@ class EventCategoryModel {
           name: 'Hauser',
           categoriesPrices: {'Regular': 1000, 'VIP': 3000},
           day: '20',
-          month: '5',
+          month: 'May',
           year: '2026',
           isSeating: true,
           location: 'Grand Egyptian Museum',
@@ -105,7 +105,7 @@ class EventCategoryModel {
           name: 'Sound and light',
           categoriesPrices: {'Regular': 1000, 'VIP': 3000},
           day: '20',
-          month: '5',
+          month: 'May',
           year: '2026',
           isSeating: false,
           location: 'Pyramids of Giza',

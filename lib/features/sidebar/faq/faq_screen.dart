@@ -6,7 +6,7 @@ import 'package:tazkarti/core/colors/colors.dart';
 import 'package:tazkarti/core/fonts/fonts.dart';
 import 'package:tazkarti/core/icons/Icons_maneger.dart';
 import 'package:tazkarti/core/widgets/header_info/header_info.dart';
-import 'package:tazkarti/data/faq_models/taz_id_model.dart';
+import 'package:tazkarti/data/models/faq_models/taz_id_model.dart';
 import 'package:tazkarti/features/sidebar/drawer.dart';
 import 'package:tazkarti/features/sidebar/faq/faq_header.dart';
 import 'package:tazkarti/features/sidebar/faq/faq_item.dart';

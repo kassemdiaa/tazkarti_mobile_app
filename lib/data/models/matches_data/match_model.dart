@@ -1,4 +1,4 @@
-import 'package:tazkarti/models/matches_data/match_time_model.dart';
+import 'package:tazkarti/data/models/matches_data/match_time_model.dart';
 
 class MatchModel {
   String stadium;

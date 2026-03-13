@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tazkarti/models/events_data/event_category_model.dart';
-import 'package:tazkarti/models/events_data/event_model.dart';
+import 'package:tazkarti/data/models/events_data/event_category_model.dart';
+import 'package:tazkarti/data/models/events_data/event_model.dart';
 
 class SelectedEventProvider extends ChangeNotifier{
   EventModel event=EventCategoryModel.categories[1].events[1];
