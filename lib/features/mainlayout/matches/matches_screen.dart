@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tazkarti/core/colors/colors.dart';
 import 'package:tazkarti/core/fonts/fonts.dart';
-import 'package:tazkarti/features/mainlayout/matches/models/match_model.dart';
-import 'package:tazkarti/features/mainlayout/matches/widgets/match_card.dart';
-import 'package:tazkarti/features/mainlayout/matches/widgets/tournament_filter_tab.dart';
+import 'package:tazkarti/core/widgets/search_button/search_button.dart';
+import 'package:tazkarti/data/models/matches_data/match_model.dart';
+import 'package:tazkarti/features/mainlayout/matches/match_item.dart';
 
 class MatchesScreen extends StatefulWidget {
   const MatchesScreen({super.key});
@@ -14,201 +13,157 @@ class MatchesScreen extends StatefulWidget {
 }
 
 class _MatchesScreenState extends State<MatchesScreen> {
-  int selectedTournament = 0;
-  late List<MatchModel> matches;
+  String? _selectedTournament; // null = All Tournaments
 
-  @override
-  void initState() {
-    super.initState();
-    matches = getSampleMatches();
+  List<String> get _tournaments {
+    return MatchModel.matches.map((m) => m.tournment).toSet().toList();
+  }
+
+  List<MatchModel> get _filteredMatches {
+    if (_selectedTournament == null) return MatchModel.matches;
+    return MatchModel.matches
+        .where((m) => m.tournment == _selectedTournament)
+        .toList();
+  }
+
+  Map<String, List<MatchModel>> get _groupedByTournament {
+    final Map<String, List<MatchModel>> grouped = {};
+    for (final match in _filteredMatches) {
+      grouped.putIfAbsent(match.tournment, () => []).add(match);
+    }
+    return grouped;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(color: ColorsManeger.bgColor),
-      child: Column(
-        children: [
-          // Info Banner
-          Container(
-            decoration: BoxDecoration(color: ColorsManeger.white),
-            padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 12.h),
-            width: double.infinity,
-            child: Text(
-              
-                  '                              Tazkarti ID is your pass to stadiums.                                                                      It is an effective method to achieve the safety of fans Allowing identifying them in the stadium   Tazkarti is also a ticketing provider and event organizer that plans and hosts its own events all around Egypt.',
-              
-              style: FontManeger.smallTitle.copyWith(
-                color: ColorsManeger.darkGray,
-              ),
-              
-            ),
-          ),
-          SizedBox(height: 24.h),
+    final grouped = _groupedByTournament;
 
-          // Matches Title and Search
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.w),
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 10.w),
+      width: double.infinity,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Header
+          Row(
+            children: [
+              Text('Matches', style: FontManeger.bigTitle),
+              const Spacer(),
+              const SearchButton(),
+            ],
+          ),
+          SizedBox(height: 16.h),
+
+          // Tournament Filter - centered row
+          SizedBox(
+            height: 120.h,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "Matches",
-                  style: TextStyle(
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.bold,
-                    color: ColorsManeger.black,
-                  ),
+                _TournamentChip(
+                  label: 'All Tournaments',
+                  isSelected: _selectedTournament == null,
+                  onTap: () => setState(() => _selectedTournament = null),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    // Handle search
-                  },
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 16.w,
-                      vertical: 10.h,
+                SizedBox(width: 16.w),
+                ..._tournaments.expand(
+                  (t) => [
+                    _TournamentChip(
+                      label: t,
+                      isSelected: _selectedTournament == t,
+                      onTap: () => setState(() => _selectedTournament = t),
                     ),
-                    decoration: BoxDecoration(
-                      color: ColorsManeger.blue,
-                      borderRadius: BorderRadius.circular(6.r),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.search,
-                          color: ColorsManeger.white,
-                          size: 18.sp,
-                        ),
-                        SizedBox(width: 6.w),
-                        Text(
-                          'Search',
-                          style: TextStyle(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w600,
-                            color: ColorsManeger.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                    SizedBox(width: 16.w),
+                  ],
                 ),
               ],
             ),
           ),
-          SizedBox(height: 20.h),
 
-          // Tournament Filters
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.w),
-            child: SizedBox(
-              height: 100.h,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  TournamentFilterTab(
-                    label: 'All Tournaments',
-                    icon: Icons.emoji_events,
-                    isSelected: selectedTournament == 0,
-                    onTap: () {
-                      setState(() {
-                        selectedTournament = 0;
-                      });
-                    },
-                  ),
-                  TournamentFilterTab(
-                    label: 'Nile League 2025/2026',
-                    icon: Icons.sports_soccer,
-                    isSelected: selectedTournament == 1,
-                    onTap: () {
-                      setState(() {
-                        selectedTournament = 1;
-                      });
-                    },
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(height: 20.h),
+          SizedBox(height: 8.h),
 
-          // Matches List
+          // Matches list grouped by tournament
           Expanded(
-            child: ListView.builder(
-              padding: EdgeInsets.symmetric(horizontal: 15.w),
-              itemCount: matches.length + 1,
-              itemBuilder: (context, index) {
-                if (index == matches.length) {
-                  return Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20.h),
-                    child: Center(
-                      child: GestureDetector(
-                        onTap: () {
-                          // Handle View More
-                        },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 40.w,
-                            vertical: 12.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: ColorsManeger.gray,
-                            borderRadius: BorderRadius.circular(6.r),
-                          ),
-                          child: Text(
-                            'View More',
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w600,
-                              color: ColorsManeger.white,
-                            ),
-                          ),
-                        ),
-                      ),
+            child: ListView(
+              children: grouped.entries.map((entry) {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ...entry.value.map(
+                      (match) => MatchItem(match: match),
                     ),
-                  );
-                }
-
-                return MatchCard(
-                  match: matches[index],
-                  onBookTap: () {
-                    _showBookingDialog(context, matches[index]);
-                  },
+                  ],
                 );
-              },
+              }).toList(),
             ),
           ),
         ],
       ),
     );
   }
+}
 
-  void _showBookingDialog(BuildContext context, MatchModel match) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text('Book Ticket'),
-        content: Text(
-          'Book ticket for ${match.homeTeamName} vs ${match.awayTeamName}?',
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('Ticket booked for match ${match.matchNumber}'),
-                  backgroundColor: ColorsManeger.green,
+class _TournamentChip extends StatelessWidget {
+  final String label;
+  final bool isSelected;
+  final VoidCallback onTap;
+
+  const _TournamentChip({
+    required this.label,
+    required this.isSelected,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        width: 90.w,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // Circle
+            Container(
+              width: 76.r,
+              height: 76.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: isSelected ? Colors.white : Colors.grey.shade200,
+                border: isSelected
+                    ? Border.all(
+                        color: const Color(0xFF1DB954),
+                        width: 2.5,
+                      )
+                    : null,
+              ),
+              child: Center(
+                child: Icon(
+                  Icons.emoji_events_outlined,
+                  size: isSelected ? 38.r : 34.r,
+                  color: const Color(0xFF1DB954),
                 ),
-              );
-            },
-            child: const Text('Book'),
-          ),
-        ],
+              ),
+            ),
+            SizedBox(height: 8.h),
+            // Label below circle
+            Text(
+              label,
+              textAlign: TextAlign.center,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontSize: 10.sp,
+                fontWeight:
+                    isSelected ? FontWeight.w700 : FontWeight.w400,
+                color: isSelected
+                    ? const Color(0xFF1DB954)
+                    : Colors.grey.shade600,
+                height: 1.3,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
