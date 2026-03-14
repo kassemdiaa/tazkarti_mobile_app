@@ -1,8 +1,14 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:tazkarti/core/colors/colors.dart';
 import 'package:tazkarti/core/fonts/fonts.dart';
+import 'package:tazkarti/data/models/events_data/event_category_model.dart';
+import 'package:tazkarti/data/models/events_data/event_model.dart';
+import 'package:tazkarti/data/models/matches_data/match_model.dart';
+import 'package:tazkarti/features/mainlayout/events/events/event_item.dart';
+import 'package:tazkarti/features/mainlayout/matches/match_item.dart';
 import 'package:tazkarti/providers/bottom_nav_provider/bottom_nav_provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,9 +19,34 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late List<EventModel> _randomEvents;
+  late List<MatchModel> _randomMatches;
+
+  @override
+  void initState() {
+    super.initState();
+    _randomEvents = _getRandomEvents();
+    _randomMatches = _getRandomMatches();
+  }
+
+  List<EventModel> _getRandomEvents() {
+    final allEvents = EventCategoryModel.categories
+        .expand((category) => category.events)
+        .toList();
+    allEvents.shuffle(Random());
+    return allEvents.take(3).toList();
+  }
+
+  List<MatchModel> _getRandomMatches() {
+    final allMatches = List<MatchModel>.from(MatchModel.matches);
+    allMatches.shuffle(Random());
+    return allMatches.take(2).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return SingleChildScrollView(
+      child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
@@ -24,6 +55,21 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [Text('Events', style: FontManeger.bigTitle)],
           ),
+        ),
+        Column(
+          children: _randomEvents.map((event) => Padding(
+            padding: EdgeInsets.only(bottom: 10.h),
+            child: EventItem(
+              picPath: event.imagePath,
+              title: event.name,
+              numOfShows: event.numOfShows,
+              location: event.location,
+              day: event.day,
+              month: event.month,
+              year: event.year,
+              price: event.categoriesPrices['Regular'].toString(),
+            ),
+          )).toList(),
         ),
         SizedBox(height: 8.h),
         Padding(
@@ -41,6 +87,13 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [Text('Matches', style: FontManeger.bigTitle)],
           ),
+        ),
+        SizedBox(height: 8.h),
+        Column(
+          children: _randomMatches.map((match) => Padding(
+            padding: EdgeInsets.only(bottom: 10.h),
+            child: MatchItem(match: match),
+          )).toList(),
         ),
         SizedBox(height: 8.h),
         Padding(
@@ -80,6 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ],
+      ),
     );
   }
 }
