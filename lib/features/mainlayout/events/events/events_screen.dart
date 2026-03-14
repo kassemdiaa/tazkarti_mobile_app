@@ -87,7 +87,7 @@ class _CategoryScreenState extends State<EventsScreen> {
                   day:category.events[index].day ,
                   month: category.events[index].month,
                   year: category.events[index].year,
-                  price: category.events[index].categoriesPrices['Regular'].toString(),
+                  price: category.events[index].seating.prices[0].toString(),
                 ),
               ),
               separatorBuilder: (context, index) => SizedBox(height: 14.h),

@@ -4,12 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:tazkarti/core/colors/colors.dart';
 import 'package:tazkarti/core/fonts/fonts.dart';
+import 'package:tazkarti/core/routes/routes.dart';
 import 'package:tazkarti/data/models/events_data/event_category_model.dart';
 import 'package:tazkarti/data/models/events_data/event_model.dart';
 import 'package:tazkarti/data/models/matches_data/match_model.dart';
 import 'package:tazkarti/features/mainlayout/events/events/event_item.dart';
 import 'package:tazkarti/features/mainlayout/matches/match_item.dart';
 import 'package:tazkarti/providers/bottom_nav_provider/bottom_nav_provider.dart';
+import 'package:tazkarti/providers/selected_even_provider.dart/selected_event_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -34,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
         .expand((category) => category.events)
         .toList();
     allEvents.shuffle(Random());
-    return allEvents.take(3).toList();
+    return allEvents.take(2).toList();
   }
 
   List<MatchModel> _getRandomMatches() {
@@ -59,15 +61,21 @@ class _HomeScreenState extends State<HomeScreen> {
         Column(
           children: _randomEvents.map((event) => Padding(
             padding: EdgeInsets.only(bottom: 10.h),
-            child: EventItem(
-              picPath: event.imagePath,
-              title: event.name,
-              numOfShows: event.numOfShows,
-              location: event.location,
-              day: event.day,
-              month: event.month,
-              year: event.year,
-              price: event.categoriesPrices['Regular'].toString(),
+            child: InkWell(
+              onTap: () {
+                context.read<SelectedEventProvider>().selectEvent(event);
+                Navigator.pushNamed(context, RoutesManeger.eventsDeitailsScreen);
+              },
+              child: EventItem(
+                picPath: event.imagePath,
+                title: event.name,
+                numOfShows: event.numOfShows,
+                location: event.location,
+                day: event.day,
+                month: event.month,
+                year: event.year,
+                price: event.seating.prices[0].toString(),
+              ),
             ),
           )).toList(),
         ),

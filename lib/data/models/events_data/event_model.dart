@@ -1,3 +1,5 @@
+import 'package:tazkarti/data/models/events_data/seating_model.dart';
+
 class EventModel {
   String day;
   String year;
@@ -8,8 +10,7 @@ class EventModel {
   String numOfShows;
   String termsOfEntry;
   bool isSeating;
-
-  Map<String, int> categoriesPrices;
+  SeatingModel seating;
   EventModel({
     required this.name,
     required this.day,
@@ -20,6 +21,6 @@ class EventModel {
     required this.isSeating,
     required this.numOfShows,
     required this.termsOfEntry,
-    required this.categoriesPrices,
+    required this.seating
   });
 }

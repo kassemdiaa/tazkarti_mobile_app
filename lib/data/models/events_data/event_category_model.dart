@@ -1,5 +1,6 @@
 import 'package:tazkarti/core/assets/assets.dart';
 import 'package:tazkarti/data/models/events_data/event_model.dart';
+import 'package:tazkarti/data/models/events_data/seating_model.dart';
 
 class EventCategoryModel {
   String name;
@@ -17,9 +18,14 @@ class EventCategoryModel {
       imagePath: AssetsManeger.operaCover,
       events: [
         EventModel(
+          seating: SeatingModel(
+            categories: ['Regular', 'VIP','VVIP'],
+            prices: [1000, 3000,9000],
+            numOfRows: [5, 3,2],
+            numOfSeatsInRows: [8, 6,4],
+          ),
           imagePath: AssetsManeger.opera2,
           name: 'Orkestra',
-          categoriesPrices: {'Regular': 1000, 'VIP': 3000},
           day: '20',
           month: 'May',
           year: '2026',
@@ -28,10 +34,14 @@ class EventCategoryModel {
           numOfShows: '1',
           termsOfEntry: 'No refunds or exchange',
         ),
-        EventModel(
+        EventModel(seating: SeatingModel(
+            categories: ['Regular', 'VIP'],
+            prices: [1000, 3000],
+            numOfRows: [5, 3],
+            numOfSeatsInRows: [8, 6],
+          ),
           imagePath: AssetsManeger.opera4,
           name: 'Omar Khairat',
-          categoriesPrices: {'Regular': 1000, 'VIP': 3000},
           day: '20',
           month: 'May',
           year: '2026',
@@ -40,10 +50,15 @@ class EventCategoryModel {
           numOfShows: '1',
           termsOfEntry: 'No refunds or exchange',
         ),
-        EventModel(
+        EventModel(seating: SeatingModel(
+            categories: ['Regular', 'VIP'],
+            prices: [1000, 3000],
+            numOfRows: [5, 3],
+            numOfSeatsInRows: [8, 6],
+          ),
           imagePath: AssetsManeger.opera5,
           name: 'Abd Elhalim Newira',
-          categoriesPrices: {'Regular': 1000, 'VIP': 3000},
+
           day: '20',
           month: 'May',
           year: '2026',
@@ -58,10 +73,14 @@ class EventCategoryModel {
       name: 'Gem',
       imagePath: AssetsManeger.gemCover,
       events: [
-        EventModel(
+        EventModel(seating: SeatingModel(
+            categories: ['Regular', 'VIP'],
+            prices: [1000, 3000],
+            numOfRows: [5, 3],
+            numOfSeatsInRows: [8, 6],
+          ),
           imagePath: AssetsManeger.gem1,
           name: 'Calum Scott',
-          categoriesPrices: {'Regular': 1000, 'VIP': 3000},
           day: '20',
           month: 'May',
           year: '2026',
@@ -70,10 +89,15 @@ class EventCategoryModel {
           numOfShows: '1',
           termsOfEntry: 'No refunds or exchange',
         ),
-        EventModel(
+        EventModel(seating: SeatingModel(
+            categories: ['Regular', 'VIP'],
+            prices: [1000, 3000],
+            numOfRows: [5, 3],
+            numOfSeatsInRows: [8, 6],
+          ),
           imagePath: AssetsManeger.gem2,
           name: 'Brain Maknight',
-          categoriesPrices: {'Regular': 1000, 'VIP': 3000},
+
           day: '20',
           month: 'May',
           year: '2026',
@@ -82,10 +106,15 @@ class EventCategoryModel {
           numOfShows: '1',
           termsOfEntry: 'No refunds or exchange',
         ),
-        EventModel(
+        EventModel(seating: SeatingModel(
+            categories: ['Regular', 'VIP'],
+            prices: [1000, 3000],
+            numOfRows: [5, 3],
+            numOfSeatsInRows: [8, 6],
+          ),
           imagePath: AssetsManeger.gem3,
           name: 'Hauser',
-          categoriesPrices: {'Regular': 1000, 'VIP': 3000},
+
           day: '20',
           month: 'May',
           year: '2026',
@@ -100,10 +129,12 @@ class EventCategoryModel {
       name: 'Sound and light',
       imagePath: AssetsManeger.soundLight,
       events: [
-        EventModel(
+        EventModel(seating: SeatingModel(
+            categories: ['Regular', 'VIP'],
+            prices: [1000, 3000],
+          ),
           imagePath: AssetsManeger.soundLight,
           name: 'Sound and light',
-          categoriesPrices: {'Regular': 1000, 'VIP': 3000},
           day: '20',
           month: 'May',
           year: '2026',

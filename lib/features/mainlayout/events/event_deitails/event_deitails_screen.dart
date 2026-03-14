@@ -196,7 +196,8 @@ class _EventDeitailsScreenState extends State<EventDeitailsScreen> {
                               vertical: 10.w,
                             ),
                             child: PricesTableWidget(
-                              categoriesPrices: event.categoriesPrices,
+                              categories: event.seating.categories,
+                              prices: event.seating.prices,
                             ),
                           ),
                         ),

@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
 class PricesTableWidget extends StatelessWidget {
-  final Map<String, num> categoriesPrices;
+  final List<String> categories;
+  final List<num> prices;
   final String currencyLabel;
 
   const PricesTableWidget({
     super.key,
-    required this.categoriesPrices,
+    required this.categories,
+    required this.prices,
     this.currencyLabel = 'EGP',
-  });
+  }) : assert(categories.length == prices.length,
+            'categories and prices must have the same length');
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +27,11 @@ class PricesTableWidget extends StatelessWidget {
           // Header Row
           _buildHeaderRow(),
           // Data Rows
-          ...categoriesPrices.entries.map(
-            (entry) => _buildDataRow(
-              entry.key,
-              '${entry.value} $currencyLabel',
-              isLast: entry.key == categoriesPrices.keys.last,
+          ...List.generate(
+            categories.length,
+            (index) => _buildDataRow(
+              categories[index],
+              '${prices[index]} $currencyLabel',
             ),
           ),
         ],
@@ -56,7 +59,7 @@ class PricesTableWidget extends StatelessWidget {
               ),
             ),
           ),
-        Container(width: 1, color: Colors.black),
+          Container(width: 1, color: Colors.black),
           Expanded(
             child: Container(
               color: const Color(0xFF4CAF50),
@@ -78,7 +81,7 @@ class PricesTableWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildDataRow(String category, String price, {bool isLast = false}) {
+  Widget _buildDataRow(String category, String price) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tazkarti/core/colors/colors.dart';
-import 'package:tazkarti/data/models/events_data/event_model.dart';
+import 'package:tazkarti/core/routes/routes.dart';
 
 class BookTicketItem extends StatelessWidget {
   const BookTicketItem({super.key});
@@ -11,7 +11,7 @@ class BookTicketItem extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 20.w),
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {Navigator.pushNamed(context, RoutesManeger.bookSeatingSceen);},
         style: ElevatedButton.styleFrom(backgroundColor: ColorsManeger.green,shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(10.r))),
         child: Text(
           'Book Ticket',

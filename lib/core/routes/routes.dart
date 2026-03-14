@@ -4,6 +4,7 @@ import 'package:tazkarti/features/authentication/register/register_screen.dart';
 import 'package:tazkarti/features/mainlayout/events/event_deitails/event_deitails_screen.dart';
 import 'package:tazkarti/features/mainlayout/events/events/events_screen.dart';
 import 'package:tazkarti/features/mainlayout/mainayout.dart';
+import 'package:tazkarti/features/payment/events_payment/seating_payment/book_seats_screen.dart';
 import 'package:tazkarti/features/sidebar/about_us/about_screen.dart';
 import 'package:tazkarti/features/sidebar/contact_us/contact_screen.dart';
 import 'package:tazkarti/features/sidebar/faq/faq_screen.dart';
@@ -21,6 +22,7 @@ abstract class RoutesManeger {
   static const String contactUsScreen = '/contactUs';
   static const String eventsScreen = '/categoryScreen';
   static const String eventsDeitailsScreen = '/eventsDeitailsScreen';
+  static const String bookSeatingSceen = '/bookSeatingSceen';
 
   static Route? getRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -46,6 +48,9 @@ abstract class RoutesManeger {
         return CupertinoPageRoute(builder: (context) => ContactScreen());
       case eventsDeitailsScreen:
         return CupertinoPageRoute(builder: (context) => EventDeitailsScreen());
+        case bookSeatingSceen:
+        return CupertinoPageRoute(builder: (context) => BookSeatsScreen());
+        
     }
     return null;
   }
